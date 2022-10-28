@@ -18,6 +18,36 @@
   }
 }
 
+/*  Dark Mode Toggle CSS starts */
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  transform: scale(1.5);
+}
+
+.ball {
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s linear;
+}
+.checkbox:checked + .label .ball {
+  transform: translateX(16px);
+}
+
+.fa-moon {
+  color: #d8b4fe;
+  font-size: 10px;
+}
+
+.fa-sun {
+  color: #fde047;
+  font-size: 10px;
+}
+/*  Dark Mode Toggle CSS ends */
+
 a {
   color: inherit;
   text-decoration: none;
