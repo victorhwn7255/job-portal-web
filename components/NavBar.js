@@ -17,7 +17,7 @@ export default function NavBar() {
   }, [])
 
   return (
-    <nav className='w-full fixed px-6 py-6 flex-row border-b shadow-md bg-white dark:bg-backgroundDark dark:border-slate-800'>
+    <nav className='w-full px-6 py-6 flex-row border-b shadow-md bg-white dark:bg-backgroundDark dark:border-slate-800'>
       <div className='container flex justify-between items-center mx-auto'>
         {/* left */}
         <Link href="/" className='flex items-center space-x-2 group'>

@@ -33,6 +33,8 @@ module.exports = {
         backgroundDark: '#24252D',
         textDark: '#2D2E36',
         lightBlue: '#4A77CE',
+        darkerBlue: '#446aaf',
+        lightGray: '#F0F0F3',
       },
     },
   },
