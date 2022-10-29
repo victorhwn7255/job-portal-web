@@ -1,23 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { useTheme } from 'next-themes'
 import { HiOfficeBuilding } from 'react-icons/hi'
-import Image from 'next/image';
 import Link from 'next/link'
-import cross from '../assets/cross.png'
-import menu from '../assets/menu.png'
 
 
-export default function NavBar() {
-  const [isOpen, setIsOpen] = useState(false)
+export default function NavBar({toggleTheme, theme}) {
+  const [showHamMenu, setShowHamMenu] = useState(false)
 
-  const { theme, setTheme } = useTheme()
-
-  useEffect(() => {
-    setTheme('light')
-  }, [])
+  const handleChange = () => {
+    setShowHamMenu(current => !current)
+  }
 
   return (
-    <nav className='w-full px-6 py-6 flex-row border-b shadow-md bg-white dark:bg-backgroundDark dark:border-slate-800'>
+    <nav className='w-full px-3 md:px-6 py-6 flex-row border-b shadow-md bg-white dark:bg-backgroundDark dark:border-slate-800'>
       <div className='container flex justify-between items-center mx-auto'>
         {/* left */}
         <Link href="/" className='flex items-center space-x-2 group'>
@@ -26,14 +20,14 @@ export default function NavBar() {
         </Link>
 
         {/* right */}
-        <div className='flex items-center space-x-3 md:space-x-6'>
+        <div className='flex items-center space-x-3 md:space-x-4 lg:space-x-5 relative'>
           {/* dark mode toggle button */}
-          <div className="flex items-center mr-3">
+          <div className="flex items-center mr-3 absolute right-[3rem] sm:right-0 sm:relative">
             <input
               type="checkbox"
               className="checkbox"
               id="checkbox"
-              onChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+              onChange={toggleTheme}
             />
             <label htmlFor="checkbox" className="flex justify-between items-center w-[34px] h-[18px] bg-black rounded-2xl p-1 relative label cursor-pointer group">
               <i className="fas fa-sun group-hover:brightness-125 duration-200" />
@@ -50,30 +44,29 @@ export default function NavBar() {
             <p>Login</p>
           </Link>
 
-          {/* Hamburger Botton (for small screens) */}
-          <div className='flex md:hidden'>
-            {isOpen ? (
-              <Image
-                src={cross}
-                objectFit="contain"
-                width={24}
-                height={24}
-                alt="close"
-                onClick={() => { setIsOpen(!isOpen); }}
-                className={theme === 'light' ? 'filter invert' : undefined}
-              />
-            ) : (
-              <Image
-                src={menu}
-                objectFit="contain"
-                width={24}
-                height={24}
-                alt="menu"
-                onClick={() => { setIsOpen(!isOpen); }}
-                className={theme === 'light' ? 'filter invert' : undefined}
-              />
-            )}
-          </div>
+          {/* Hamburger Button */}
+          <label htmlFor="check" className="bar ml-0 block md:hidden">
+            <input id="check" 
+              type="checkbox"
+              value={showHamMenu}
+              onChange={handleChange}
+            />
+            <span className="top bg-black dark:bg-grayClassic50"></span>
+            <span className="middle bg-black dark:bg-grayClassic50"></span>
+            <span className="bottom bg-black dark:bg-grayClassic50"></span>
+          </label>
+
+          {/* Ham Menu */}
+          {showHamMenu && (
+            <div className='absolute bg-white dark:bg-slate-900 h-[150px] w-[250px] rounded-xl top-[4rem] -right-3 z-50 p-3 flex flex-col justify-around items-center shadow-xl'>
+              <Link href='/login' className='bg-lightGray text-textDark w-[90%] py-3 rounded-xl flex justify-center items-center'>
+                <p>Login</p>
+              </Link>
+              <Link href='/signup' className='bg-lightBlue text-grayClassic50 w-[90%] py-3 rounded-xl flex justify-center items-center'>
+                <p>Sign Up</p>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </nav>
