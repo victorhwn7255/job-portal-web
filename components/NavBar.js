@@ -42,11 +42,11 @@ export default function NavBar() {
             </label>
           </div>
           {/* sign up */}
-          <Link href='/' className='hidden md:flex'>
+          <Link href='/signup' className='hidden md:flex'>
             <p className='text-lightBlue dark:text-grayClassic50 hover:text-blue-800 font-medium text-sm md:text-base hover:underline underline-offset-[6px] decoration-wavy duration-200'>Sign Up</p>
           </Link>
           {/* login */}
-          <Link href='/' className='smBlueBtn hidden md:flex'>
+          <Link href='/login' className='smBlueBtn hidden md:flex'>
             <p>Login</p>
           </Link>
 

@@ -5,11 +5,11 @@ import { HiOfficeBuilding } from 'react-icons/hi'
 import { FcGoogle } from 'react-icons/fc'
 import{ BsLinkedin } from 'react-icons/bs'
 
-export default function LoginPage() {
+export default function SignupPage() {
   const router = useRouter()
 
   return (
-    <div className='flex justify-center pt-[4rem] md:pt-[5rem] lg:pt-[5.5rem]'>
+    <div className='flex justify-center pt-[4rem]'>
       <div className=''>
           {/* logo */}
           <Link href="/" className='flex flex-col items-center space-y-2 group'>
@@ -17,11 +17,33 @@ export default function LoginPage() {
             <h3 className='text-lightBlue dark:text-grayClassic50 font-medium text-base md:text-lg group-hover:text-blue-800 dark:group-hover:text-grayClassic50 duration-200'>Quick Jobs</h3>
           </Link>
 
-          {/* input form */}
+          {/* box */}
           <form 
-            className='flex flex-col items-center justify-center h-[300px] w-[360px] sm:w-[450px] bg-white dark:bg-bgDark3 shadow-md rounded-xl mt-10 px-8 py-6'
+            className='flex flex-col items-center justify-center h-[420px] w-[360px] sm:w-[450px] bg-white dark:bg-bgDark3 shadow-md rounded-xl mt-10 px-8 py-6'
             onSubmit={() => router.push('/')}
           >
+            {/* First Name */}
+            <div className="form__group field w-full flex flex-col items-start">
+              <input 
+                required 
+                placeholder="Name" 
+                className="form__field inputField" 
+                type="text" 
+                id='firstname'
+              />
+              <label className="form__label" htmlFor="firstname">First Name</label>
+            </div>
+            {/* Last Name */}
+            <div className="form__group field w-full flex flex-col items-start mt-3">
+              <input 
+                required 
+                placeholder="Name" 
+                className="form__field inputField" 
+                type="text" 
+                id='lastname'
+              />
+              <label className="form__label" htmlFor="lastname">Last Name</label>
+            </div>
             {/* Email */}
             <div className="form__group field w-full flex flex-col items-start mt-3">
               <input 
@@ -44,11 +66,12 @@ export default function LoginPage() {
               />
               <label className="form__label" htmlFor="password">Password</label>
             </div>
+            {/* Button */}
             <button 
               className='smBlueBtn w-full mt-9 py-2'
               type='submit'
             >
-              <p>Login</p>
+              <p>Sign Up</p>
             </button>
           </form>
 

@@ -16,7 +16,11 @@
   .smBlueBtn {
     @apply bg-lightBlue rounded-lg px-[25px] py-[10px] border border-lightBlue text-white font-medium text-sm md:text-base hover:bg-grayClassic100 dark:hover:bg-backgroundDark dark:hover:brightness-150 hover:text-lightBlue dark:hover:text-grayClassic50 duration-200;
   }
+  .inputField {
+    @apply bg-gray-50 dark:bg-blue-100 h-[55px] w-[100%] rounded-xl border border-gray-200 dark:border-blue-100 outline-none px-5 pt-6 pb-1 text-sm text-textDark focus:bg-white focus:shadow-inner;
+  }
 }
+
 
 /*  Dark Mode Toggle CSS starts */
 .checkbox {
@@ -56,5 +60,42 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.form__group {
+  position: relative;
+}
+
+.form__field {
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 15px;
+  cursor: text;
+  top: 18px;
+  left: 20px;
+}
+
+.form__label {
+  position: absolute;
+  display: block;
+  transition: 0.2s;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.form__field:focus ~ .form__label, .form__field:valid ~ .form__label  {
+  position: absolute;
+  top: 6px;
+  left:20px;
+  display: block;
+  transition: 0.2s;
+  font-size: 12px;
+}
+
 
 
