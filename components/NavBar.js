@@ -46,7 +46,7 @@ export default function NavBar() {
             <p className='text-lightBlue dark:text-grayClassic50 hover:text-blue-800 font-medium text-sm md:text-base hover:underline underline-offset-[6px] decoration-wavy duration-200'>Sign Up</p>
           </Link>
           {/* login */}
-          <Link href='/' className='bg-lightBlue rounded-lg px-[25px] py-[10px] border border-lightBlue text-white font-medium text-sm md:text-base hover:bg-grayClassic100 dark:hover:bg-backgroundDark dark:hover:brightness-150 hover:text-lightBlue dark:hover:text-grayClassic50 duration-200 hidden md:flex'>
+          <Link href='/' className='smBlueBtn hidden md:flex'>
             <p>Login</p>
           </Link>
 

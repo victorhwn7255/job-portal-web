@@ -8,13 +8,13 @@
 
 @layer base {
   body {
-    @apply dark:text-grayClassic50 dark:bg-backgroundDark text-textDark bg-grayClassic50 font-poppins min-h-screen w-screen p-0 m-0;
+    @apply dark:text-grayClassic50 dark:bg-backgroundDark text-textDark bg-grayClassic50 font-poppins min-h-screen w-screen p-0 m-0 overflow-x-hidden;
   }
 }
 
 @layer components {
-  .smBtn {
-    @apply ;
+  .smBlueBtn {
+    @apply bg-lightBlue rounded-lg px-[25px] py-[10px] border border-lightBlue text-white font-medium text-sm md:text-base hover:bg-grayClassic100 dark:hover:bg-backgroundDark dark:hover:brightness-150 hover:text-lightBlue dark:hover:text-grayClassic50 duration-200;
   }
 }
 

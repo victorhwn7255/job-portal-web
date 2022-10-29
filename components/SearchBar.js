@@ -4,9 +4,9 @@ import { GoSearch } from 'react-icons/go'
 export default function SearchBar() {
 
   return (
-    <div className='flex items-center relative w-full md:w-[95%] lg:w-[60%] xl:w-[50%]'>
+    <div className='flex items-center relative w-[100%] mx-auto lg:mx-0 md:w-[96%] lg:w-[60%] xl:w-[50%]'>
       <input
-        className='w-full bg-lightGray text-xs md:text-sm py-[10px] px-6 rounded-3xl outline-none focus:shadow-inner focus:bg-grayClassic200'
+        className='w-full bg-lightGray dark:text-textDark text-xs md:text-sm py-[10px] px-6 rounded-3xl outline-none focus:shadow-inner focus:bg-grayClassic50'
         placeholder='Search jobs by title, industry, location'  
       />
 
