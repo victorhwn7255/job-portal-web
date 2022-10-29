@@ -34,7 +34,7 @@ module.exports = {
         textDark: '#2D2E36',
         lightBlue: '#4A77CE',
         darkerBlue: '#446aaf',
-        lightGray: '#F0F0F3',
+        lightGray: '#ededf2',
       },
     },
   },
