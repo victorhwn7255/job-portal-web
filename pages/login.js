@@ -1,12 +1,15 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import { HiOfficeBuilding } from "react-icons/hi";
 import { FcGoogle } from "react-icons/fc";
 import { BsLinkedin } from "react-icons/bs";
 import toast from "react-hot-toast";
 
 export default function LoginPage() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
   const router = useRouter();
 
   const handleSubmit = (e) => {
@@ -42,6 +45,8 @@ export default function LoginPage() {
               className="form__field inputField"
               type="text"
               id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <label className="form__label" htmlFor="email">
               Email Address
@@ -55,6 +60,8 @@ export default function LoginPage() {
               className="form__field inputField"
               type="password"
               id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <label className="form__label" htmlFor="password">
               Password
