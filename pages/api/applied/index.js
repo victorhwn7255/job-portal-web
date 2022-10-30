@@ -4,12 +4,12 @@ export default function handler(req, res) {
   if (req.method === 'GET') {
     res.status(200).json(appliedJobs)
   } else if (req.method === 'POST') {
-    const newApplication = req.body.newApplication
+    const newAppliedJob = req.body.newAppliedJob
     const dataToPost = {
       id: Math.random(),
-      job: newApplication,
+      appliedJob: newAppliedJob
     }
-    appliedJobs.push(dataToPost)
+    appliedJobs.unshift(dataToPost)
     res.status(201).json(dataToPost)
   }
   

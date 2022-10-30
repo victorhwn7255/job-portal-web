@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useTheme } from 'next-themes'
+import { useTheme } from "next-themes";
 import DropDownMenu from "../components/DropDownMenu";
 import JobListing from "../components/JobListing";
 import Metatags from "../components/Metatages";
@@ -7,15 +7,15 @@ import NavBar from "../components/NavBar";
 import SearchBar from "../components/SearchBar";
 
 export default function Home() {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setTheme('light')
-  }, [])
+    setTheme("light");
+  }, []);
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light')
-  }
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
     <div>

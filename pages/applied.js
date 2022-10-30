@@ -1,9 +1,14 @@
-import React, {useEffect, useState} from 'react'
-import { useTheme } from 'next-themes'
+import React, { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 import Metatags from "../components/Metatages";
-import NavBarLoggedIn from '../components/NavBarLoggedIn';
+import NavBarLoggedIn from "../components/NavBarLoggedIn";
 import SearchBar from "../components/SearchBar";
 import DropDownMenu from "../components/DropDownMenu";
+import { BsStack } from "react-icons/bs";
+import { AiFillDollarCircle } from "react-icons/ai";
+import { MdLocationOn } from "react-icons/md";
+import ColorIcon from "../components/ColorIcon";
+import StatusButton from "../components/StatusButton";
 
 export default function MyAppliedJobsPage() {
   const [jobsData, setJobsData] = useState([]);
@@ -17,11 +22,11 @@ export default function MyAppliedJobsPage() {
     fetchData();
   }, []);
 
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light')
-  }
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
     <div>
@@ -40,23 +45,60 @@ export default function MyAppliedJobsPage() {
           <SearchBar />
         </div>
         {/* filters */}
-        <div className='flex items-center space-x-5 mt-5 ml-1'>
+        <div className="flex items-center space-x-5 mt-5 ml-1">
           <DropDownMenu title="Date Applied" />
-          <DropDownMenu title="Status" />          
+          <DropDownMenu title="Status" />
         </div>
       </section>
 
       {/* Jobs */}
-      <section className='flex flex-col mt-10 space-y-6 mb-32'>
-        {jobsData && jobsData.map((eachJob, idx) => (
-          <div key={idx} className='bg-white shadow-lg rounded-lg w-[90%] lg:w-[65%] h-[200px] mx-auto'>
-            <div>
-
+      <section className="flex flex-col mt-10 space-y-6 mb-32">
+        {jobsData &&
+          jobsData.map((eachJob, idx) => (
+            <div
+              key={idx}
+              className="bg-white shadow-lg rounded-lg w-[90%] lg:w-[65%] mx-auto"
+            >
+              <div className="px-6 py-6 flex items-center space-x-5">
+                <ColorIcon status={eachJob.appliedJob?.status} />
+                <div className="flex items-start justify-between w-full">
+                  {/* info */}
+                  <div>
+                    <h3 className="font-medium text-grayClassic700">
+                      {eachJob.appliedJob?.title}
+                    </h3>
+                    <p className="text-sm font-light text-grayClassic700">
+                      {eachJob.appliedJob?.companyName}
+                    </p>
+                    <div className="text-grayClassic700 flex items-center space-x-3 mt-3">
+                      <div className="flex items-center space-x-1">
+                        <BsStack size={15} />
+                        <p className="text-xs">
+                          {eachJob.appliedJob?.experience}
+                        </p>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <AiFillDollarCircle size={15} />
+                        <p className="text-xs">{eachJob.appliedJob?.salary}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-1 mt-3 text-grayClassic700">
+                      <MdLocationOn size={15} />
+                      <p className="text-xs">{eachJob.appliedJob?.location}</p>
+                    </div>
+                  </div>
+                  {/* button */}
+                  <div className="h-[100px] flex flex-col items-end justify-between">
+                    <div className="font-light text-grayClassic700">
+                      {eachJob.appliedJob?.submission}
+                    </div>
+                    <StatusButton status={eachJob.appliedJob?.status} />
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </section>
-
     </div>
-  )
+  );
 }
