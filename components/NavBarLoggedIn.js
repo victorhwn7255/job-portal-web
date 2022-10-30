@@ -104,7 +104,7 @@ export default function NavBarLoggedIn({ toggleTheme, theme }) {
 
           {/* Ham Menu */}
           {showHamMenu && (
-            <div className="absolute bg-white dark:bg-slate-900 h-[150px] w-[250px] rounded-xl top-[4rem] -right-3 z-50 p-3 flex flex-col justify-around items-center shadow-xl">
+            <div className="absolute bg-white dark:bg-slate-900 h-[200px] w-[250px] rounded-xl top-[4rem] -right-3 z-50 p-3 flex flex-col justify-around items-center shadow-xl">
               <Link
                 href="/browse"
                 className="bg-lightGray text-textDark w-[90%] py-3 rounded-xl flex justify-center items-center"
@@ -113,9 +113,15 @@ export default function NavBarLoggedIn({ toggleTheme, theme }) {
               </Link>
               <Link
                 href="/applied"
-                className="bg-lightBlue text-grayClassic50 w-[90%] py-3 rounded-xl flex justify-center items-center"
+                className="bg-lightGray text-textDark w-[90%] py-3 rounded-xl flex justify-center items-center"
               >
                 <p>Applied Jobs</p>
+              </Link>
+              <Link
+                href="/userProfile"
+                className="bg-lightBlue text-grayClassic50 w-[90%] py-3 rounded-xl flex justify-center items-center"
+              >
+                <p>My Profile</p>
               </Link>
             </div>
           )}

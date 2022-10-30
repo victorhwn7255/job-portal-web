@@ -2,7 +2,8 @@ export const userDetails = [
   {
     id: 0,
     user: {
-      name: 'Johnathan Doe',
+      firstName: 'Johnathan',
+      lastName: 'Doe',
       email: 'johndoe@gmail.com',
       resume: 'johndoe-resume.pdf',
       resumeUpdateDate: '19 Sep 2022',

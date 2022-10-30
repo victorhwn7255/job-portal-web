@@ -29,7 +29,7 @@ export default function MyAppliedJobsPage() {
   };
 
   return (
-    <div>
+    <div className="w-screen">
       {/* Meta tags (for SEO purposes) */}
       <Metatags title="My Applications" />
 
@@ -45,23 +45,23 @@ export default function MyAppliedJobsPage() {
           <SearchBar />
         </div>
         {/* filters */}
-        <div className="flex items-center space-x-5 mt-5 ml-1">
+        <div className="flex items-start mt-3 ml-1 space-x-5 w-[40%] md:w-[55%] lg:w-full">
           <DropDownMenu title="Date Applied" />
           <DropDownMenu title="Status" />
         </div>
       </section>
 
       {/* Jobs */}
-      <section className="flex flex-col mt-10 space-y-6 pb-32">
+      <section className="flex flex-col mt-6 md:mt-10 space-y-6 pb-32">
         {jobsData &&
           jobsData.map((eachJob, idx) => (
             <div
               key={idx}
-              className="bg-white dark:bg-bgDark2 shadow-lg rounded-lg w-[90%] lg:w-[65%] mx-auto"
+              className="bg-white dark:bg-bgDark2 shadow-lg rounded-lg w-[93%] lg:w-[65%] mx-auto"
             >
-              <div className="px-6 py-6 flex items-center space-x-5">
+              <div className="px-3 py-3 md:px-6 md:py-6 flex items-start sm:items-center space-x-5">
                 <ColorIcon status={eachJob.appliedJob?.status} />
-                <div className="flex items-start justify-between w-full">
+                <div className="flex flex-col sm:flex-row items-start justify-between w-full">
                   {/* info */}
                   <div>
                     <h3 className="font-medium text-grayClassic700 dark:text-grayClassic50">
@@ -88,8 +88,8 @@ export default function MyAppliedJobsPage() {
                     </div>
                   </div>
                   {/* button */}
-                  <div className="h-[100px] flex flex-col items-end justify-between">
-                    <div className="font-light text-grayClassic700 dark:text-grayClassic300">
+                  <div className="w-full sm:w-[150px] sm:h-[100px] mt-6 sm:mt-0 space-x-5 flex items-center sm:flex-col sm:items-end justify-between">
+                    <div className="font-light text-grayClassic700 dark:text-grayClassic300 text-sm sm:text-base">
                       {eachJob.appliedJob?.submission}
                     </div>
                     <StatusButton status={eachJob.appliedJob?.status} />

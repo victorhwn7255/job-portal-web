@@ -132,7 +132,7 @@ export default function BrowseJobsPage() {
               <h2 className="text-base md:text-lg font-semibold">
                 Front End Developer
               </h2>
-              <p className=" text-grayClassic700 dark:text-grayClassic300">Company A</p>
+              <p className=" text-grayClassic700 dark:text-grayClassic300 text-sm md:text-base">Company A</p>
             </div>
           </div>
           <div className="flex items-center space-x-5 md:space-x-14 text-grayClassic600 dark:text-grayClassic300 mt-10">
@@ -155,11 +155,11 @@ export default function BrowseJobsPage() {
       {/* Form */}
       <section className="w-full flex items-center justify-center pb-20">
         <form
-          className="flex flex-col justify-center w-[90%] sm:w-[85%] lg:w-[65%] mt-16"
+          className="flex flex-col justify-center w-[93%] sm:w-[85%] lg:w-[65%] mt-16"
           onSubmit={handleSubmit}
         >
           {/* resume */}
-          <div className="w-full px-9 py-12 bg-white dark:bg-bgDark2 dark:border-bgDark2 shadow-lg rounded-xl border border-lightGray flex flex-col">
+          <div className="w-full px-6 py-9 md:px-9 md:py-12 bg-white dark:bg-bgDark2 dark:border-bgDark2 shadow-lg rounded-xl border border-lightGray flex flex-col">
             <div className="flex items-center justify-between">
               <div className="flex flex-col items-start space-y-2">
                 <div className="flex space-x-1">
@@ -205,7 +205,7 @@ export default function BrowseJobsPage() {
           </div>
 
           {/* Education */}
-          <div className="w-full px-9 py-12 pb-20 bg-white dark:bg-bgDark2 dark:border-bgDark2 shadow-lg rounded-xl border border-lightGray flex flex-col items-start mt-12">
+          <div className="w-full px-6 py-9 md:px-9 md:py-12 pb-20 bg-white dark:bg-bgDark2 dark:border-bgDark2 shadow-lg rounded-xl border border-lightGray flex flex-col items-start mt-12">
             <div className="flex flex-col items-start space-y-2">
               <h3 className="formTitle dark:text-grayClassic100">Education</h3>
               <p className="text-xs md:text-base font-light text-grayClassic700 dark:text-grayClassic400">
@@ -216,7 +216,7 @@ export default function BrowseJobsPage() {
               {/* col 1 */}
               <div className="w-[450px] space-y-10">
                 {/* qualification */}
-                <div className="flex flex-col justify-start space-y-3 w-[60%] md:w-[90%] cursor-pointer">
+                <div className="flex flex-col justify-start space-y-3 w-[70%] md:w-[90%] cursor-pointer">
                   <label className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base">
                     Qualification Type
                   </label>
@@ -228,7 +228,7 @@ export default function BrowseJobsPage() {
                   />
                 </div>
                 {/* name of school */}
-                <div className="flex flex-col justify-start space-y-3 w-[60%] md:w-[90%]">
+                <div className="flex flex-col justify-start space-y-3 w-[70%] md:w-[90%]">
                   <label
                     htmlFor="school"
                     className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base"
@@ -269,7 +269,7 @@ export default function BrowseJobsPage() {
                   />
                 </div>
                 {/* qualification name */}
-                <div className="flex flex-col justify-start space-y-3 w-[60%] md:w-[90%]">
+                <div className="flex flex-col justify-start space-y-3 w-[70%] md:w-[90%]">
                   <label
                     htmlFor="qualification"
                     className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base"
@@ -292,7 +292,7 @@ export default function BrowseJobsPage() {
           </div>
 
           {/* Work Experience */}
-          <div className="w-full px-9 py-12 pb-20 bg-white dark:bg-bgDark2 dark:border-bgDark2 shadow-lg rounded-xl border border-lightGray flex flex-col items-start mt-12">
+          <div className="w-full px-6 py-9 md:px-9 md:py-12 pb-20 bg-white dark:bg-bgDark2 dark:border-bgDark2 shadow-lg rounded-xl border border-lightGray flex flex-col items-start mt-12">
             <div className="flex flex-col items-start space-y-2">
               <h3 className="formTitle dark:text-grayClassic100">Work Experience</h3>
               <p className="text-xs md:text-base font-light text-grayClassic700 dark:text-grayClassic400">
@@ -303,7 +303,7 @@ export default function BrowseJobsPage() {
               {/* col 1 */}
               <div className="w-[450px] space-y-10">
                 {/* company name */}
-                <div className="flex flex-col justify-start space-y-3 w-[60%] md:w-[90%]">
+                <div className="flex flex-col justify-start space-y-3 w-[70%] md:w-[90%]">
                   <label
                     id="companyname"
                     className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base"
@@ -322,7 +322,7 @@ export default function BrowseJobsPage() {
                   />
                 </div>
                 {/* employment type */}
-                <div className="flex flex-col justify-start space-y-3 w-[60%] md:w-[90%]">
+                <div className="flex flex-col justify-start space-y-3 w-[70%] md:w-[90%]">
                   <label
                     htmlFor="school"
                     className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base"
@@ -340,7 +340,7 @@ export default function BrowseJobsPage() {
               {/* col 2 */}
               <div className="w-[450px] space-y-10">
                 {/* job title */}
-                <div className="flex flex-col justify-start space-y-3 w-[60%] md:w-[90%]">
+                <div className="flex flex-col justify-start space-y-3 w-[70%] md:w-[90%]">
                   <label
                     htmlFor="jobtitle"
                     className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base"
@@ -400,7 +400,7 @@ export default function BrowseJobsPage() {
           </div>
 
           {/* skills */}
-          <div className="w-full px-9 py-12 bg-white dark:bg-bgDark2 dark:border-bgDark2 shadow-lg rounded-xl border border-lightGray flex flex-col items-start mt-12">
+          <div className="w-full px-6 py-9 md:px-9 md:py-12 bg-white dark:bg-bgDark2 dark:border-bgDark2 shadow-lg rounded-xl border border-lightGray flex flex-col items-start mt-12">
             <div className="flex flex-col items-start space-y-2">
               <h3 className="formTitle dark:text-grayClassic100">Skills</h3>
               <p className="text-xs md:text-base font-light text-grayClassic700 dark:text-grayClassic400">
