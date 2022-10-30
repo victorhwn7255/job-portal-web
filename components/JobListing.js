@@ -74,7 +74,7 @@ export default function JobListing() {
           <div className="bg-lightBlue text-grayClassic50 rounded-lg w-[95px] h-[95px] flex justify-center items-center">
             <HiOfficeBuilding size={39} />
           </div>
-          <Link href="/" className="smBlueBtn w-[100px] dark:hover:bg-slate-900">
+          <Link href="/browse" className="smBlueBtn w-[100px] dark:hover:bg-slate-900">
             <p>Apply</p>
           </Link>
         </div>

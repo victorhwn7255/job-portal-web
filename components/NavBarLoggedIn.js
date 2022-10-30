@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { HiOfficeBuilding } from 'react-icons/hi'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { FaUser } from 'react-icons/fa'
 
 
-export default function NavBar({toggleTheme, theme}) {
+export default function NavBarLoggedIn({toggleTheme, theme}) {
   const [showHamMenu, setShowHamMenu] = useState(false)
+
+  const router = useRouter()
+  const currentPage = router.pathname
 
   const handleChange = () => {
     setShowHamMenu(current => !current)
@@ -35,14 +40,24 @@ export default function NavBar({toggleTheme, theme}) {
               <div className="w-[14px] h-[14px] absolute bg-grayClassic50 rounded-full ball" />
             </label>
           </div>
-          {/* sign up */}
-          <Link href='/signup' className='hidden md:flex'>
-            <p className='text-lightBlue dark:text-grayClassic50 hover:text-blue-800 font-medium text-sm md:text-base hover:underline underline-offset-[6px] decoration-wavy duration-200'>Sign Up</p>
-          </Link>
-          {/* login */}
-          <Link href='/login' className='smBlueBtn hidden md:flex'>
-            <p>Login</p>
-          </Link>
+          {/* nav menu items */}
+          <nav className='md:flex items-center space-x-6 hidden'>
+            {/* two links */}
+            <div className='flex items-center space-x-3'>
+              <Link href='/browse'>
+                <p className={`${currentPage === '/browse' ? 'activeNavTab' : 'nonActiveNavTab'}`}>Browse Jobs</p>
+              </Link>
+              <Link href='/applied'>
+                <p className={`${currentPage === '/applied' ? 'activeNavTab' : 'nonActiveNavTab'}`}>Applied Jobs</p>
+              </Link>
+            </div>
+            {/* user */}
+            <Link href='/' className='flex items-center space-x-2 group'>
+              <FaUser size={30} className="text-lightBlue dark:text-grayClassic50 ring-2 rounded-full ring-lightBlue p-[6px] group-hover:scale-95 group-hover:text-white group-hover:ring-blue-800 group-hover:bg-blue-800 duration-200" />
+              <p className=' text-grayClassic600 group-hover:text-blue-800 duration-200 lg:block hidden'>Jonathan Doe</p>
+            </Link>
+          </nav>
+
 
           {/* Hamburger Button */}
           <label htmlFor="check" className="bar ml-0 block md:hidden">
@@ -59,11 +74,11 @@ export default function NavBar({toggleTheme, theme}) {
           {/* Ham Menu */}
           {showHamMenu && (
             <div className='absolute bg-white dark:bg-slate-900 h-[150px] w-[250px] rounded-xl top-[4rem] -right-3 z-50 p-3 flex flex-col justify-around items-center shadow-xl'>
-              <Link href='/login' className='bg-lightGray text-textDark w-[90%] py-3 rounded-xl flex justify-center items-center'>
-                <p>Login</p>
+              <Link href='/browse' className='bg-lightGray text-textDark w-[90%] py-3 rounded-xl flex justify-center items-center'>
+                <p>Browse Jobs</p>
               </Link>
-              <Link href='/signup' className='bg-lightBlue text-grayClassic50 w-[90%] py-3 rounded-xl flex justify-center items-center'>
-                <p>Sign Up</p>
+              <Link href='/applied' className='bg-lightBlue text-grayClassic50 w-[90%] py-3 rounded-xl flex justify-center items-center'>
+                <p>Applied Jobs</p>
               </Link>
             </div>
           )}
