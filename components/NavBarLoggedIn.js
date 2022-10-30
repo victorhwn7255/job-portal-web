@@ -83,7 +83,7 @@ export default function NavBarLoggedIn({ toggleTheme, theme }) {
                 size={30}
                 className="text-lightBlue dark:text-grayClassic50 ring-2 rounded-full ring-lightBlue p-[6px] group-hover:scale-95 group-hover:text-white group-hover:ring-blue-800 group-hover:bg-blue-800 duration-200"
               />
-              <p className=" text-grayClassic600 dark:text-gray-50 group-hover:text-blue-800 duration-200 lg:block hidden">
+              <p className=" text-grayClassic600 dark:text-gray-50 group-hover:text-blue-800 dark:group-hover:text-white duration-200 lg:block hidden">
                 Jonathan Doe
               </p>
             </Link>

@@ -119,23 +119,23 @@ export default function BrowseJobsPage() {
       </header>
 
       {/* Job Banner */}
-      <section className="w-full h-[260px] bg-slate-100 flex items-center justify-center">
+      <section className="w-full h-[260px] bg-slate-100 dark:bg-slate-900 flex items-center justify-center">
         <div className="flex flex-col justify-center items-start w-[90%] lg:w-[65%] px-3">
           <div className="flex items-center space-x-6">
             <div className="bg-lightBlue text-grayClassic50 rounded-lg w-[95px] h-[95px] flex justify-center items-center">
               <HiOfficeBuilding size={39} />
             </div>
             <div className="flex flex-col items-start space-y-2">
-              <p className="text-xs md:text-sm text-grayClassic600">
+              <p className="text-xs md:text-sm text-grayClassic600 dark:text-grayClassic300">
                 Application for
               </p>
               <h2 className="text-base md:text-lg font-semibold">
                 Front End Developer
               </h2>
-              <p className=" text-grayClassic700">Company A</p>
+              <p className=" text-grayClassic700 dark:text-grayClassic300">Company A</p>
             </div>
           </div>
-          <div className="flex items-center space-x-5 md:space-x-14 text-grayClassic600 mt-10">
+          <div className="flex items-center space-x-5 md:space-x-14 text-grayClassic600 dark:text-grayClassic300 mt-10">
             <div className="flex items-center space-x-1">
               <MdLocationOn size={15} />
               <p className="text-xs md:text-sm">Singapore, Singapore</p>
@@ -159,19 +159,19 @@ export default function BrowseJobsPage() {
           onSubmit={handleSubmit}
         >
           {/* resume */}
-          <div className="w-full px-9 py-12 bg-white shadow-lg rounded-xl border border-lightGray flex flex-col">
+          <div className="w-full px-9 py-12 bg-white dark:bg-bgDark2 dark:border-bgDark2 shadow-lg rounded-xl border border-lightGray flex flex-col">
             <div className="flex items-center justify-between">
               <div className="flex flex-col items-start space-y-2">
                 <div className="flex space-x-1">
-                  <h3 className="formTitle">Resume</h3>
+                  <h3 className="formTitle dark:text-grayClassic100">Resume</h3>
                   <p className="text-red-500">*</p>
                 </div>
-                <p className="text-xs md:text-base font-light text-grayClassic700">
+                <p className="text-xs md:text-base font-light text-grayClassic700 dark:text-grayClassic400">
                   Include one resume with your application
                 </p>
               </div>
               <div className="uploadFile">
-                <button className="uploadBtn flex items-center space-x-2">
+                <button className="uploadBtn flex items-center space-x-2 dark:brightness-125">
                   <span className="fa fa-upload"></span>
                   <p>Upload</p>
                   <input
@@ -187,17 +187,17 @@ export default function BrowseJobsPage() {
               </div>
             </div>
             {resume && (
-              <div className="w-[100%] bg-grayClassic100 h-[70px] rounded-xl mt-8 px-6 py-4 flex items-center justify-between">
+              <div className="w-[100%] bg-grayClassic100 dark:bg-backgroundDark dark:brightness-125 h-[70px] rounded-xl mt-8 px-6 py-4 flex items-center justify-between">
                 <div className="flex flex-col items-start space-y-1 overflow-hidden">
                   <p className="text-sm font-medium">{resume}</p>
-                  <p className="text-xs font-light text-grayClassic700">
+                  <p className="text-xs font-light text-grayClassic700 dark:text-grayClassic500">
                     updated on {today}
                   </p>
                 </div>
                 <button onClick={() => setResume("")}>
                   <MdDelete
                     size={25}
-                    className="text-grayClassic700 hover:text-red-500 duration-200"
+                    className="text-grayClassic700 dark:text-grayClassic200 hover:text-red-500 dark:hover:text-red-400 duration-200"
                   />
                 </button>
               </div>
@@ -205,10 +205,10 @@ export default function BrowseJobsPage() {
           </div>
 
           {/* Education */}
-          <div className="w-full px-9 py-12 pb-20 bg-white shadow-lg rounded-xl border border-lightGray flex flex-col items-start mt-12">
+          <div className="w-full px-9 py-12 pb-20 bg-white dark:bg-bgDark2 dark:border-bgDark2 shadow-lg rounded-xl border border-lightGray flex flex-col items-start mt-12">
             <div className="flex flex-col items-start space-y-2">
-              <h3 className="formTitle">Education</h3>
-              <p className="text-xs md:text-base font-light text-grayClassic700">
+              <h3 className="formTitle dark:text-grayClassic100">Education</h3>
+              <p className="text-xs md:text-base font-light text-grayClassic700 dark:text-grayClassic400">
                 Select your highest qualification
               </p>
             </div>
@@ -217,7 +217,7 @@ export default function BrowseJobsPage() {
               <div className="w-[450px] space-y-10">
                 {/* qualification */}
                 <div className="flex flex-col justify-start space-y-3 w-[60%] md:w-[90%] cursor-pointer">
-                  <label className="text-grayClassic700 font-medium text-sm md:text-base">
+                  <label className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base">
                     Qualification Type
                   </label>
                   <Select
@@ -231,14 +231,14 @@ export default function BrowseJobsPage() {
                 <div className="flex flex-col justify-start space-y-3 w-[60%] md:w-[90%]">
                   <label
                     htmlFor="school"
-                    className="text-grayClassic700 font-medium text-sm md:text-base"
+                    className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base"
                   >
                     Name of School
                   </label>
                   <input
                     type="text"
                     placeholder="Enter name of school"
-                    className="bg-grayClassic100 py-1 px-5 rounded-lg h-[39px] text-sm font-light outline-none focus:bg-gray-50 focus:shadow-inner duration-200"
+                    className="bg-grayClassic100 dark:text-grayClassic800 py-1 px-5 rounded-lg h-[39px] text-sm font-light outline-none focus:bg-gray-50 focus:shadow-inner duration-200"
                     id="school"
                     value={schoolName}
                     onChange={(e) => {
@@ -253,14 +253,14 @@ export default function BrowseJobsPage() {
                 <div className="flex flex-col justify-start space-y-3">
                   <label
                     htmlFor="attainedyear"
-                    className="text-grayClassic700 font-medium text-sm md:text-base"
+                    className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base"
                   >
                     Year Attained
                   </label>
                   <input
                     type="text"
                     placeholder="YYYY"
-                    className="bg-grayClassic100 py-1 px-3 rounded-lg h-[36px] w-[120px] text-sm font-light text-center outline-none focus:bg-gray-50 focus:shadow-inner duration-200"
+                    className="bg-grayClassic100 dark:text-grayClassic800 py-1 px-3 rounded-lg h-[36px] w-[120px] text-sm font-light text-center outline-none focus:bg-gray-50 focus:shadow-inner duration-200"
                     id="attainedyear"
                     value={yearAttained}
                     onChange={(e) => {
@@ -272,14 +272,14 @@ export default function BrowseJobsPage() {
                 <div className="flex flex-col justify-start space-y-3 w-[60%] md:w-[90%]">
                   <label
                     htmlFor="qualification"
-                    className="text-grayClassic700 font-medium text-sm md:text-base"
+                    className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base"
                   >
                     Qualification Name
                   </label>
                   <input
                     type="text"
                     placeholder="Enter name of qualification"
-                    className="bg-grayClassic100 py-1 px-5 rounded-lg h-[39px] text-sm font-light outline-none focus:bg-gray-50 focus:shadow-inner duration-200"
+                    className="bg-grayClassic100 dark:text-grayClassic800 py-1 px-5 rounded-lg h-[39px] text-sm font-light outline-none focus:bg-gray-50 focus:shadow-inner duration-200"
                     id="qualification"
                     value={qualificationName}
                     onChange={(e) => {
@@ -292,10 +292,10 @@ export default function BrowseJobsPage() {
           </div>
 
           {/* Work Experience */}
-          <div className="w-full px-9 py-12 pb-20 bg-white shadow-lg rounded-xl border border-lightGray flex flex-col items-start mt-12">
+          <div className="w-full px-9 py-12 pb-20 bg-white dark:bg-bgDark2 dark:border-bgDark2 shadow-lg rounded-xl border border-lightGray flex flex-col items-start mt-12">
             <div className="flex flex-col items-start space-y-2">
-              <h3 className="formTitle">Work Experience</h3>
-              <p className="text-xs md:text-base font-light text-grayClassic700">
+              <h3 className="formTitle dark:text-grayClassic100">Work Experience</h3>
+              <p className="text-xs md:text-base font-light text-grayClassic700 dark:text-grayClassic400">
                 Share your relevant work experience
               </p>
             </div>
@@ -306,14 +306,14 @@ export default function BrowseJobsPage() {
                 <div className="flex flex-col justify-start space-y-3 w-[60%] md:w-[90%]">
                   <label
                     id="companyname"
-                    className="text-grayClassic700 font-medium text-sm md:text-base"
+                    className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base"
                   >
                     Company Name
                   </label>
                   <input
                     type="text"
                     placeholder="Enter company name"
-                    className="bg-grayClassic100 py-1 px-5 rounded-lg h-[39px] text-sm font-light outline-none focus:bg-gray-50 focus:shadow-inner duration-200"
+                    className="bg-grayClassic100 dark:text-grayClassic800 py-1 px-5 rounded-lg h-[39px] text-sm font-light outline-none focus:bg-gray-50 focus:shadow-inner duration-200"
                     id="companyname"
                     value={companyName}
                     onChange={(e) => {
@@ -325,7 +325,7 @@ export default function BrowseJobsPage() {
                 <div className="flex flex-col justify-start space-y-3 w-[60%] md:w-[90%]">
                   <label
                     htmlFor="school"
-                    className="text-grayClassic700 font-medium text-sm md:text-base"
+                    className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base"
                   >
                     Employment Type
                   </label>
@@ -343,14 +343,14 @@ export default function BrowseJobsPage() {
                 <div className="flex flex-col justify-start space-y-3 w-[60%] md:w-[90%]">
                   <label
                     htmlFor="jobtitle"
-                    className="text-grayClassic700 font-medium text-sm md:text-base"
+                    className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base"
                   >
                     Job Title
                   </label>
                   <input
                     type="text"
                     placeholder="Enter job title"
-                    className="bg-grayClassic100 py-1 px-5 rounded-lg h-[39px] text-sm font-light outline-none focus:bg-gray-50 focus:shadow-inner duration-200"
+                    className="bg-grayClassic100 dark:text-grayClassic800 py-1 px-5 rounded-lg h-[39px] text-sm font-light outline-none focus:bg-gray-50 focus:shadow-inner duration-200"
                     id="jobtitle"
                     value={jobTitle}
                     onChange={(e) => {
@@ -360,13 +360,13 @@ export default function BrowseJobsPage() {
                 </div>
                 {/* employment period */}
                 <div className="flex flex-col justify-start space-y-3">
-                  <label className="text-grayClassic700 font-medium text-sm md:text-base">
+                  <label className="text-grayClassic700 dark:text-grayClassic100 font-medium text-sm md:text-base">
                     Employment Period
                   </label>
                   <div className="flex flex-col md:flex-row items-start md:items-center space-x-0 md:space-x-3 space-y-3 md:space-y-0">
                     <input
                       type="date"
-                      className="bg-grayClassic100 px-5 cursor-pointer text-grayClassic400 py-2 rounded-lg text-sm outline-none w-[60%] md:w-[40%]"
+                      className="bg-grayClassic100 px-5 cursor-pointer text-grayClassic400 dark:text-grayClassic800 py-2 rounded-lg text-sm outline-none w-[60%] md:w-[40%]"
                       id="startdate"
                       value={startDate}
                       onChange={(e) => {
@@ -376,7 +376,7 @@ export default function BrowseJobsPage() {
                     <p className="text-grayClassic500 hidden md:block"> - </p>
                     <input
                       type="date"
-                      className="bg-grayClassic100 px-5 cursor-pointer text-grayClassic400 py-2 rounded-lg text-sm outline-none w-[60%] md:w-[40%]"
+                      className="bg-grayClassic100 px-5 cursor-pointer text-grayClassic400 dark:text-grayClassic800 py-2 rounded-lg text-sm outline-none w-[60%] md:w-[40%]"
                       id="enddate"
                       value={endDate}
                       onChange={(e) => {
@@ -388,11 +388,11 @@ export default function BrowseJobsPage() {
               </div>
             </div>
             {/* optional */}
-            <label className="text-grayClassic700 font-medium mt-10 text-sm md:text-base">
+            <label className="text-grayClassic700 dark:text-grayClassic100 font-medium mt-10 text-sm md:text-base">
               Workd Description (optional)
             </label>
             <textarea
-              className="bg-grayClassic100 w-[100%] md:w-[90%] mt-3 rounded-lg text-sm px-6 py-4 outline-none focus:bg-gray-50 focus:shadow-inner duration-200"
+              className="bg-grayClassic100 dark:text-grayClassic800 w-[100%] md:w-[90%] mt-3 rounded-lg text-sm px-6 py-4 outline-none focus:bg-gray-50 focus:shadow-inner duration-200"
               placeholder="Enter work description"
               rows={6}
               maxLength="800"
@@ -400,10 +400,10 @@ export default function BrowseJobsPage() {
           </div>
 
           {/* skills */}
-          <div className="w-full px-9 py-12 bg-white shadow-lg rounded-xl border border-lightGray flex flex-col items-start mt-12">
+          <div className="w-full px-9 py-12 bg-white dark:bg-bgDark2 dark:border-bgDark2 shadow-lg rounded-xl border border-lightGray flex flex-col items-start mt-12">
             <div className="flex flex-col items-start space-y-2">
-              <h3 className="formTitle">Skills</h3>
-              <p className="text-xs md:text-base font-light text-grayClassic700">
+              <h3 className="formTitle dark:text-grayClassic100">Skills</h3>
+              <p className="text-xs md:text-base font-light text-grayClassic700 dark:text-grayClassic400">
                 Add the skills you possess
               </p>
             </div>
