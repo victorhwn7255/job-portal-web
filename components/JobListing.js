@@ -3,11 +3,13 @@ import { HiOfficeBuilding } from "react-icons/hi";
 import { BsStack } from "react-icons/bs";
 import { AiFillDollarCircle } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function JobListing() {
   const [selectedJob, setSelectedJob] = useState(0);
   const [jobsData, setJobsData] = useState([]);
+
+  const router = useRouter()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,6 +19,30 @@ export default function JobListing() {
     };
     fetchData();
   }, []);
+
+  const handleClick = async () => {
+    const jobToApply = {
+      title: jobsData[selectedJob].title,
+      companyName: jobsData[selectedJob].company,
+      experience: jobsData[selectedJob].experience,
+      salary: jobsData[selectedJob].salary,
+      location: jobsData[selectedJob].location,
+      status: "In Progress",
+    }
+
+    const newJobToApplyResponse = await fetch("/api/toApply", {
+      method: "POST",
+      body: JSON.stringify({ jobToApply }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const dataOfToApply = await newJobToApplyResponse.json();
+    console.log("New Job To Apply: ", dataOfToApply);
+
+    router.push('/login')
+
+  }
 
   return (
     <div className="flex flex-col lg:flex-row items-start justify-center lg:space-x-5 mx-3 sm:mx-5 lg:mx-0">
@@ -74,9 +100,9 @@ export default function JobListing() {
           <div className="bg-lightBlue text-grayClassic50 rounded-lg w-[95px] h-[95px] flex justify-center items-center">
             <HiOfficeBuilding size={39} />
           </div>
-          <Link href="/login" className="smBlueBtn w-[100px] dark:hover:bg-slate-900">
+          <button onClick={handleClick} className="smBlueBtn w-[100px] dark:hover:bg-slate-900">
             <p>Apply</p>
-          </Link>
+          </button>
         </div>
         {/* middle */}
         <div className="text-grayClassic600 dark:text-gray-200 mt-9">

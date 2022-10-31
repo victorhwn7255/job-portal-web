@@ -30,7 +30,6 @@ export default function MyAppliedJobsPage() {
 
   return (
     <div className="w-screen">
-      {/* Meta tags (for SEO purposes) */}
       <Metatags title="My Applications" />
 
       {/* Navbar Header */}

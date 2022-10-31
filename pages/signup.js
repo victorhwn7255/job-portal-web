@@ -5,6 +5,7 @@ import { HiOfficeBuilding } from "react-icons/hi";
 import { FcGoogle } from "react-icons/fc";
 import { BsLinkedin } from "react-icons/bs";
 import toast from "react-hot-toast";
+import Metatags from "../components/Metatages";
 
 export default function SignupPage() {
   const [firstName, setFirstName] = useState('')
@@ -14,14 +15,47 @@ export default function SignupPage() {
 
   const router = useRouter();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    //CREATE A NEW USER OBJECT AFTER USER SIGN UP
+    //Usually I would use a 3rd party Auth Provider for SignUp & Login 
+    const newUserSignUp = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      resume: '',
+      resumeUpdateDate: '',
+      qualificationType: '',
+      yearAttained: '',
+      schoolName: '',
+      qualificationName: '',
+      companyName: '',
+      jobTitle: '',
+      jobLocation: '',
+      employmentType: '',
+      startDate: '',
+      endDate: '',
+      appliedJobs: [],
+    };
+
+    const response = await fetch("/api/userCollections", {
+      method: "POST",
+      body: JSON.stringify({ newUserSignUp }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    console.log("New User Signed Up: ", data);
+
     router.push("/userProfile");
     toast.success("Welcome to Quick Jobs!");
   };
 
   return (
     <div className="flex justify-center pt-[4rem]">
+      <Metatags title="Sign Up | Quick Jobs" />
       <div className="">
         {/* logo */}
         <Link href="/" className="flex flex-col items-center space-y-2 group">

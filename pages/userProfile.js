@@ -54,7 +54,7 @@ export default function UserProfilePage() {
         <FaRegEdit size={20} className="text-gray-500 dark:text-grayClassic300 cursor-pointer hover:text-gray-800 dark:hover:text-white duration-200" />
       </div>
       {/* resume */}
-      <div className='w-[90%] sm:w-[85%] lg:w-[65%] mx-auto mt-12 sm:mt-20'>
+      <div className='w-[90%] lg:w-[65%] mx-auto mt-12 sm:mt-20'>
         <h3 className=' text-grayClassic800 dark:text-grayClassic100 font-medium'>Resume</h3>
         <div className=' bg-grayClassic100 dark:bg-bgDark3 shadow-sm rounded-lg py-5 px-5 sm:px-8 flex items-center justify-between mt-2 sm:mt-3'>
           <div className='flex flex-col items-start space-y-2'>

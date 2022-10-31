@@ -1,0 +1,72 @@
+export const userCollections = [
+  {
+    id: 0,
+    user: {
+      firstName: 'Johnathan',
+      lastName: 'Doe',
+      email: 'johndoe@gmail.com',
+      resume: 'johndoe-resume.pdf',
+      resumeUpdateDate: '19 Sep 2022',
+      qualificationType: 'Bacholors',
+      yearAttained: '2022',
+      schoolName: 'University of Singapore',
+      qualificationName: 'BSc Computer Science',
+      companyName: 'SoftwareBiz',
+      jobTitle: 'Software Engineering Intern',
+      jobLocation: 'Singapore, Singapore',
+      employmentType: 'Intern',
+      startDate: 'May 2022',
+      endDate: 'Aug 2022',
+      appliedJobs: [
+        {
+          id: 0,
+          appliedJob:{
+            title: 'Software Engineering Intern',
+            companyName: 'SoftwareBiz',
+            experience: '0-2 years',
+            salary: '$1,500 - $2,000',
+            location: 'Singapore, Singapore',
+            submission: '4 months ago',
+            status: 'Accepted',
+          },
+        },
+        {
+          id: 1,
+          appliedJob:{
+            title: 'Data Analyst Intern',
+            companyName: 'Random Company',
+            experience: '0-2 years',
+            salary: '$1,000 - $1,500',
+            location: 'Singapore, Singapore',
+            submission: '4 months ago',
+            status: 'Rejected',
+          },
+        },
+        {
+          id: 2,
+          appliedJob:{
+            title: 'Computer Vision Intern',
+            companyName: 'Random Company',
+            experience: '0-2 years',
+            salary: '$1,000 - $1,500',
+            location: 'Singapore, Singapore',
+            submission: '5 months ago',
+            status: 'Rejected',
+          },
+        },
+        {
+          id: 3,
+          appliedJob:{
+            title: 'Software Engineering Intern',
+            companyName: 'Random Company',
+            experience: '0-2 years',
+            salary: '$1,000 - $1,500',
+            location: 'Singapore, Singapore',
+            submission: '5 months ago',
+            status: 'Rejected',
+          },
+        },
+      ],
+    },
+  },
+]

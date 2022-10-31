@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Metatags from "../components/Metatages";
 import NavBarLoggedIn from "../components/NavBarLoggedIn";
@@ -23,6 +23,18 @@ export default function BrowseJobsPage() {
   const [employmentType, setEmploymentType] = useState("");
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+
+  //TO FETCH THE DATA OF THAT JOB WHICH USE SELECTED TO APPLY FROM THE MAIN PAGE
+  const [jobToApply, setJobToApply] = useState(null)
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/api/toApply");
+      const data = await response.json();
+      setJobToApply(data[0].jobToApply);
+    };
+    fetchData();
+  }, []);
+  //console.log(jobToApply)
 
   const { theme, setTheme } = useTheme();
 
@@ -119,7 +131,7 @@ export default function BrowseJobsPage() {
       </header>
 
       {/* Job Banner */}
-      <section className="w-full h-[260px] bg-slate-100 dark:bg-slate-900 flex items-center justify-center">
+      {jobToApply && <section className="w-full h-[260px] bg-slate-100 dark:bg-slate-900 flex items-center justify-center">
         <div className="flex flex-col justify-center items-start w-[90%] lg:w-[65%] px-3">
           <div className="flex items-center space-x-6">
             <div className="bg-lightBlue text-grayClassic50 rounded-lg w-[95px] h-[95px] flex justify-center items-center">
@@ -130,27 +142,27 @@ export default function BrowseJobsPage() {
                 Application for
               </p>
               <h2 className="text-base md:text-lg font-semibold">
-                Front End Developer
+                {jobToApply?.title}
               </h2>
-              <p className=" text-grayClassic700 dark:text-grayClassic300 text-sm md:text-base">Company A</p>
+              <p className=" text-grayClassic700 dark:text-grayClassic300 text-sm md:text-base">{jobToApply?.company}</p>
             </div>
           </div>
           <div className="flex items-center space-x-5 md:space-x-14 text-grayClassic600 dark:text-grayClassic300 mt-10">
             <div className="flex items-center space-x-1">
               <MdLocationOn size={15} />
-              <p className="text-xs md:text-sm">Singapore, Singapore</p>
+              <p className="text-xs md:text-sm">{jobToApply?.location}</p>
             </div>
             <div className="flex items-center space-x-2">
               <BsStack size={15} />
-              <p className="text-xs md:text-sm">0-2 years</p>
+              <p className="text-xs md:text-sm">{jobToApply?.experience}</p>
             </div>
             <div className="flex items-center space-x-1">
               <AiFillDollarCircle size={15} />
-              <p className="text-xs md:text-sm">$4,500 - $7,000 monthly</p>
+              <p className="text-xs md:text-sm">{jobToApply?.salary} monthly</p>
             </div>
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* Form */}
       <section className="w-full flex items-center justify-center pb-20">
