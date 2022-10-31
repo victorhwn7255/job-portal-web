@@ -19,7 +19,7 @@ export default function LoginPage() {
     //I WILL SKIP THE USER AUTH CHECK FOR THIS ASSESSMENT
     //In real productions, I would use a 3rd party Auth Provider to handle login & signup
 
-    router.push("/browse");
+    router.push("/applied");
     toast.success("Welcome back Jonathan!");
   };
 

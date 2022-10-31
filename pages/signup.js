@@ -49,7 +49,7 @@ export default function SignupPage() {
     const data = await response.json();
     console.log("New User Signed Up: ", data);
 
-    router.push("/userProfile");
+    router.push("/applied");
     toast.success("Welcome to Quick Jobs!");
   };
 

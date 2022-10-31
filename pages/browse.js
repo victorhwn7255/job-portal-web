@@ -36,6 +36,17 @@ export default function BrowseJobsPage() {
   }, []);
   //console.log(jobToApply)
 
+  const [appliedJobs, setAppliedJobs] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/api/applied");
+      const data = await response.json();
+      setAppliedJobs(data);
+    };
+    fetchData();
+  }, []);
+  console.log('I have applied these jobs before: ', appliedJobs)
+
   const { theme, setTheme } = useTheme();
 
   const router = useRouter();
